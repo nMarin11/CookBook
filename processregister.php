@@ -41,6 +41,7 @@ if(!empty($_POST["registersubmit"])){
 		$escapeUsername = mysqli_real_escape_string($conn, $username);
 		$escapeEmail = mysqli_real_escape_string($conn, $email);
 		$escapeHash = mysqli_real_escape_string($conn, $hash);
+		$image = "";
 
 		$sqlSelect= "SELECT * FROM users WHERE username='".$escapeUsername."'";
 		$resultSelect = $conn->query($sqlSelect);
@@ -49,11 +50,12 @@ if(!empty($_POST["registersubmit"])){
 	}
 
 		if($ok == true){
-		$sql = "INSERT INTO users (firstName, lastName, email, username, password) VALUES ('".$escapeFirstName."',
+		$sql = "INSERT INTO users (firstName, lastName, email, username, password, image) VALUES ('".$escapeFirstName."',
        '".$escapeLastName."',
        '".$escapeEmail."',
        '".$escapeUsername."',
-       '".$escapeHash."')";
+       '".$escapeHash."',
+       '".$image."')";
 
 		$registerUser = mysqli_query($conn, $sql);
 
