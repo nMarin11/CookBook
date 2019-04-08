@@ -15,7 +15,7 @@
     <input type="text" name="editText" value="{$currentPost}">
     <input type="hidden" name="postId" value="{$postId}">
     <input type="submit" name="save" id="saveChanges" value="Sačuvaj izmene">
-    <a id="back" href="profile.php">vrati se nazad</a>
+    <a id="back" href="profile.php?username={$username}">vrati se nazad</a>
     </form>
 </body>
 </html>

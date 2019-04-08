@@ -8,8 +8,7 @@ $smarty = new Smarty();
 $smarty->template_dir = 'views';
 $smarty->compile_dir = 'tpl';
 //initial variable definition
-$wrongPassword = '';
-$msg = "";
+$username = "";
 //end initial settings
 
 /***********************************************/
@@ -47,16 +46,12 @@ if(!empty($_POST["save"])){
 $postId = $_GET['postId'];
 };
 
+$username = $_SESSION['username'];
+
 
 
 
 $conn->close();
-
-//if(sessionid!=postid){
-  //  header('Location: dashboard.php');
-//}
-//post_body
-
 
 $smarty->assign(
     'currentPost',
@@ -66,6 +61,11 @@ $smarty->assign(
 $smarty->assign(
     'postId',
     $postId
+);
+
+$smarty->assign(
+    'username',
+    $username
 );
 
 
